@@ -1,0 +1,236 @@
+.home__filter {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5)
+}
+
+.home__inicio{
+  width: 100%;
+  height: 100vh;
+  background-image: url('https://cdn.shortpixel.ai/client/q_glossy,ret_img/http://tuhogaraunclic.com/wp-content/uploads/2018/07/architecture-building-daylight-206172-scaled.jpg');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+
+.home__inicio--call {
+  width: 70%;
+  text-align: center;
+  color: #fefefe;
+  z-index: 2;
+}
+
+.home__inicio--call > h1 {
+  font-size: 50px;
+}
+
+.home__inicio--call > button {
+  background-color: #bc1b3d;
+  border-radius: 5px;
+  border: none;
+  padding: 15px;
+  margin: 30px;
+  color: #fefefe;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.home__inicio--call > button > a {
+ color: #fefefe; 
+ text-decoration: none;
+ font-weight: 800;
+ font-size: 15px;
+}
+
+.home__inicio--call > button:hover {
+  padding: 20px;
+  background-color: #f3204c;
+}
+
+.home__presentation {
+  position: relative;
+  width: 90%;
+  height: auto;
+  margin: -60px auto 0;
+  padding: 10px;
+  background-color: #fefefe;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.home__presentation h1 {
+  margin: 30px auto;
+}
+
+.home__presentation--services {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.home__presentation--service {
+  width: 30%;
+  height: auto;
+  margin: 60px auto;
+}
+
+.home__presentation--service > a {
+  text-decoration: none;
+}
+
+.home__presentation--service > a > h2 {
+  color: #000;
+}
+
+.home__presentation--service svg {
+  color: #bc1b3d;
+  font-size: 70px;
+  transition: 0.3s ease;
+}
+
+.home__presentation--service svg:hover {
+  color: #f3204c;
+  font-size: 80px;
+}
+
+.home__presentation--service p {
+  margin-top: 30px;
+}
+
+.home__media {
+  position: relative;
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px;
+  background-image: url(https://cdn.shortpixel.ai/client/q_glossy,ret_img/http://tuhogaraunclic.com/wp-content/uploads/2018/07/apartment-architecture-art-276724.jpg);
+  background-attachment: fixed;
+}
+
+.home__media:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6)
+}
+
+.home__media--video {
+  margin: 20px auto;
+}
+
+.home__media--social {
+  position: relative;
+  display: grid;
+  grid-template-areas: 'title title title'
+                       'facebook instagram youtube';
+  text-align: center;
+}
+
+.home__media--social > h2 {
+  grid-area: title;
+  color: #fefefe;
+  margin: 30px auto;
+}
+
+.home__media--social a {
+  text-decoration: none;
+  color: #fefefe;
+  font-size: 20px;
+  transition: 0.3s ease-in-out;
+}
+
+.home__media--social a:hover {
+  font-size: 25px;
+}
+
+.home__blogs {
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fefefe;
+  display: grid;
+  grid-template-areas: 'title title title'
+                       'blog1 blog2 blog3';
+}
+
+.home__blogs > h2 {
+  grid-area: title;
+  align-self: center;
+  margin: 20px auto;
+}
+
+.home__contact {
+  position: relative;
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px;
+  background-image: url(https://cdn.shortpixel.ai/client/q_glossy,ret_img/http://tuhogaraunclic.com/wp-content/uploads/2018/07/apartment-architectural-design-architecture-323780-scaled.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.home__contact:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6)
+}
+
+.home__contact--info {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+  margin: auto 0;
+  text-align: center;
+}
+
+.home__contact--info > h2 {
+  color: #fefefe;
+}
+
+.contact__info {
+  margin: 15px 0;
+}
+
+.contact__info > a {
+  color: #fefefe;
+  font-size: 20px;
+  text-decoration: none;
+  transition: 0.3s all ease-in-out;
+}
+
+.contact__info > a:hover {
+  font-size: 25px;
+}
+
+.contact__info > a > svg {
+  margin-right: 10px;
+}
+
+.contact__logo {
+  margin-top: 50px;
+}
+
+.contact__logo > a > img {
+  height: 150px;
+  transition: 0.5s  all ease-in-out;
+}
+
+.contact__logo > a > img:hover {
+  transform: scale(1.2)
+}
+
