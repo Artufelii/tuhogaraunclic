@@ -1,4 +1,5 @@
 import React from "react"
+import './css/Propiedad.css'
 
 function Propiedad(){
   return(
@@ -14,7 +15,7 @@ function Propiedad(){
           <p>Dirección genérica</p>
         </div>
         <div className="propiedad__info--precio">
-          <p>$<strong>Precio</strong>.00 MXN</p>
+          <p>$<strong>Precio.00</strong> MXN</p>
         </div>
       </div>
     </div>

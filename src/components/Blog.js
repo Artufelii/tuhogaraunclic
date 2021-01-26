@@ -1,6 +1,5 @@
 import React from 'react'
 import BlogArticle from './BlogArticle'
-import Footer from './Footer'
 import './css/Blog.css'
 
 function Blog() {
@@ -31,7 +30,6 @@ function Blog() {
           <BlogArticle />
         </div>
       </div>
-      <Footer />
     </div>
   )
 }

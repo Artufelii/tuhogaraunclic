@@ -14,9 +14,18 @@ function Propiedades(){
         <div className="propiedades__contenido--propiedad">
           <Propiedad />
         </div>
+        <div className="propiedades__contenido--propiedad">
+          <Propiedad />
+        </div>
+        <div className="propiedades__contenido--propiedad">
+          <Propiedad />
+        </div>
+        <div className="propiedades__contenido--propiedad">
+          <Propiedad />
+        </div>
       </div>
     </div>
-    )
+  )
 }
 
 export default Propiedades

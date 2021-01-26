@@ -1,0 +1,55 @@
+.servicio {
+  width: 100%;
+  height: auto;
+}
+
+.servicio__portada {
+  margin-top: 30px;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 70px;
+  color: #bc1b3d;
+}
+
+.servicio__info {
+  padding: 20px;
+}
+
+.servicio__info--title {
+  text-align: center;
+}
+
+.servicio__info--description > p {
+  margin: 25px 0;
+  text-align: justify;
+}
+
+.servicio__info--price > p {
+  margin: 15px 0;
+}
+
+.servicio__call {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.servicio__call > h3 {
+  margin: 15px 0;
+}
+
+.servicio__call > a > button {
+  padding: 15px;
+  margin: 10px 0;
+  color: #fefefe;
+  background-color: rgba(188, 27, 61, 1);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+
+.servicio__call > a > button:hover {
+  padding: 20px;
+}
+

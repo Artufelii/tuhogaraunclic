@@ -9,6 +9,7 @@
   color: #fefefe;
   font-family: 'Arial';
   background-color: #380315;
+  border-radius: 5px;
 } 
 
 .contact__form > h5 {

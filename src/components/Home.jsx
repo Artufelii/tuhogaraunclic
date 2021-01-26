@@ -6,7 +6,6 @@ import { faCheck, faHome, faBullhorn, faEnvelopeOpenText } from '@fortawesome/fr
 import { faFacebookSquare, faInstagram, faYoutube, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import BlogArticle from './BlogArticle'
 import ContactForm from './ContactForm'
-import Footer from './Footer'
 import Logo from '../Logos/Logo.jpeg'
 import './css/Home.css'
 
@@ -35,7 +34,6 @@ function Home(){
               <h2>Avalúos</h2>
             </Link>
             <p>¡No vendas ni compres una propiedad por mas o menos de lo que vale!</p>
-            <p>Si estas pensando en comprar o vender una propiedad nosotos te ayudamos a saber si el precio es el indicado, para que tu estes seguro de que estas pagando o vendiendo en el mejor precio del mercado</p>
           </div>
           <div className="home__presentation--service">
             <Link to="/servicios">
@@ -43,7 +41,6 @@ function Home(){
               <h2>Aseoria Inmobiliaria</h2>
             </Link>
             <p>¿Quieres comprar o vender y no sabes que hacer?</p>
-            <p>Nosotros te ayuamos a preparar todo para que puedas vender o comprar tu propiedad al mejor precio, en el menor tiempo, tu ya no tendras que preocuparte por nada.</p>
           </div>
           <div className="home__presentation--service">
             <Link to="/servicios">
@@ -51,7 +48,6 @@ function Home(){
               <h2>Publicidad para tu Casa</h2>
             </Link>
             <p>¡Deja de publicarte localmente y empieza a hacerlo en grande!</p>
-            <p>Con nosotros tu propiedad llegará a más personas, más rapido, lo que te ayudara a lograr vender en un menor tiempo y a un mejor precio.</p>
           </div>
         </div>
       </div>
@@ -114,7 +110,6 @@ function Home(){
           </div>
         </div>
       </div>
-      <Footer />
     </div>
     )
 }

@@ -1,0 +1,23 @@
+.propiedad {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+
+.propiedad__portada {
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.propiedad__portada > img {
+  width: 100%;
+}
+
+.propiedad__info {
+  padding: 0 30px 30px 30px;
+}
+
+.propiedad__info--direccion {
+  margin: 20px 0;
+}

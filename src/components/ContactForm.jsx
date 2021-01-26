@@ -18,7 +18,7 @@ const validate = (values) => {
   }
 
   if (!values.message) {
-    errors.phone = '*Por favor Escribe un mensaje' 
+    errors.message = '*Por favor Escribe un mensaje' 
   }
 
   return errors
@@ -32,7 +32,7 @@ function ContactForm(props) {
   console.log(props)
 
   return (
-    <form onSubmit={handleSubmit} className="contact__form">
+    <form onSubmit={ handleSubmit } className="contact__form">
       <h2>¡Tu opinion es importante para nosotros!</h2>
       <h5>Nombre:</h5>
       <Field name="name" component="input" placeholder="Nombre" />
