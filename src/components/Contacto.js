@@ -8,7 +8,7 @@ import Logo from '../Logos/Logo.jpeg'
 
 import ContactForm from './ContactForm'
 
-function Contacto() {
+function Contacto({ handleSubmit }) {
   return(
     <div className="contacto">
       <div className="contacto__portada">
@@ -17,7 +17,7 @@ function Contacto() {
         </div>
       </div>
       <div className="contacto__formulario">
-        <ContactForm /> 
+        <ContactForm onSubmit={ handleSubmit } /> 
         <div className="contacto__formulario--info">
           <h2>¡Contactanos en un Clic!</h2>
           <div className="contacto__info">

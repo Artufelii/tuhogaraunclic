@@ -9,12 +9,7 @@ import ContactForm from './ContactForm'
 import Logo from '../Logos/Logo.jpeg'
 import './css/Home.css'
 
-function Home(){
-
-  const handleSubmit = payload => {
-    payload.preventDefault()
-    console.log(payload)
-  }
+function Home({ handleSubmit }){
 
   return(
     <div className="home">
@@ -88,7 +83,7 @@ function Home(){
         <BlogArticle />
       </div>
       <div className="home__contact">
-        <ContactForm handleSubmit={ handleSubmit } /> 
+        <ContactForm onSubmit={ handleSubmit } /> 
         <div className="home__contact--info">
           <h2>¡Contactanos en un Clic!</h2>
           <div className="contact__info">

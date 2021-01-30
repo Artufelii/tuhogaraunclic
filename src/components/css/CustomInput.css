@@ -1,0 +1,15 @@
+.custominput {
+  width: 100%;
+}
+.custominput > input {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.custominput > input:focus {
+  outline: #bd1b3c;
+}
