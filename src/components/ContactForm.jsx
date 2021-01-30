@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { reduxForm, Field } from "redux-form";
+import { reduxForm, Field, reset } from "redux-form";
 import CustomInput from './CustomInput'
 import axios from './axios'
 import './css/ContactForm.css'
@@ -28,7 +28,7 @@ const validate = values => {
 
 let ContactForm = props => {
 
-  const { handleSubmit } = props
+  const { handleSubmit, form, dispatch } = props
 
   const [succeeded, setSucceeded] = useState(false)
   const [processing, setProcessing] = useState(false)
@@ -53,6 +53,7 @@ let ContactForm = props => {
       setClient(response.data.newClient.name)
       setSucceeded(true)
       setProcessing(false)
+      dispatch(reset(form)) 
     }
   }
 
@@ -67,7 +68,7 @@ let ContactForm = props => {
       <Field name="phone" component={CustomInput} placeholder="Telefóno" type="text" />
       <h5>Mensaje:</h5>
       <Field name="message" component='textarea' placeholder="Mensaje" />
-      <button type="submit" disbaled={ processing || succeeded }>
+      <button type="submit" disbaled={ processing || succeeded ? 'true' : 'false'}>
         { processing ? "Enviando..." : "Enviar" }
       </button>
     </form>

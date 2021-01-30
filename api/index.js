@@ -8,6 +8,7 @@ const morgan = require('morgan')
 const app = express()
 
 const clientes = require('./routes/clientes')
+const blogs = require('./routes/blogs');
 
 //configuraciones
 require('dotenv').config()
@@ -25,6 +26,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 
 //Rutas
 app.use(clientes)
+app.use(blogs)
 
 app.listen(app.get('port'), () => {
 	console.log(`Servidor en el puerto ${app.get('port')}`)

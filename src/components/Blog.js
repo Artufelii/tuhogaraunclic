@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import BlogArticle from './BlogArticle'
+import axios from './axios'
 import './css/Blog.css'
 
 function Blog() {
+  const [ blogs, setBlogs ] = useState([])
+
+  useEffect(() => {
+    const getBlogs = async () => {
+      const response = await axios({
+        method: 'GET',
+        url: '/blog',
+      })
+      setBlogs(response.data.Blogs)
+    }
+
+    getBlogs()
+  }, [setBlogs])
+
   return (
     <div className="blog">
       <div className="blog__portada">
@@ -11,24 +26,17 @@ function Blog() {
         </div>
       </div>
       <div className="blog__contenido">
-        <div className="blog__contenido--articulo">
-          <BlogArticle />
-        </div>
-        <div className="blog__contenido--articulo">
-          <BlogArticle />
-        </div>
-        <div className="blog__contenido--articulo">
-          <BlogArticle />
-        </div>
-        <div className="blog__contenido--articulo">
-          <BlogArticle />
-        </div>
-        <div className="blog__contenido--articulo">
-          <BlogArticle />
-        </div>
-        <div className="blog__contenido--articulo">
-          <BlogArticle />
-        </div>
+        { blogs.map((item) => (
+          <div className="blog__contenido--articulo" key={ item._id }>
+            <BlogArticle 
+              title= { item.title }
+              category= { item.category }
+              cover= { item.cover }
+              extract= { item.extract }
+              body= { item.body }
+            />
+          </div>
+        ))}
       </div>
     </div>
   )

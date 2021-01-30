@@ -1,15 +1,30 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import ReactPlayer from 'react-player'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faHome, faBullhorn, faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookSquare, faInstagram, faYoutube, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+import axios from './axios'
 import BlogArticle from './BlogArticle'
 import ContactForm from './ContactForm'
 import Logo from '../Logos/Logo.jpeg'
 import './css/Home.css'
 
 function Home({ handleSubmit }){
+
+  const [ blogs, setBlogs ] = useState([])
+
+  useEffect(() => {
+    const getBlogs = async () => {
+      const response = await axios({
+        method: 'GET',
+        url: '/blog',
+      })
+      setBlogs(response.data.Blogs)
+    }
+
+    getBlogs()
+  }, [setBlogs])
 
   return(
     <div className="home">
@@ -78,9 +93,17 @@ function Home({ handleSubmit }){
       </div>
       <div className="home__blogs">
         <h2>¡Noticias Inmobilirias que podrían interesarte!</h2>
-        <BlogArticle />
-        <BlogArticle />
-        <BlogArticle />
+        { blogs.slice(blogs.length-3).map((item) => (
+          <div key={item._id}>
+            <BlogArticle 
+              title= {item.title} 
+              category= {item.category} 
+              cover= {item.cover} 
+              extract= {item.extract} 
+              body= {item.body} 
+            />
+          </div>
+        ))}
       </div>
       <div className="home__contact">
         <ContactForm onSubmit={ handleSubmit } /> 
