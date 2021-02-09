@@ -1,0 +1,52 @@
+.container {
+  width: 100%;
+  height: auto;
+}
+
+.article {
+  width: 100%;
+  height: auto;
+}
+
+.article__cover {
+  width: 100%;
+  height: 60vh;
+}
+
+.article__cover > img {
+  width: 100%;
+  height: 60vh;
+}
+
+.article__info {
+  position: relative;
+  width: 90%;
+  height: auto;
+  background-color: #fefefe;
+  margin: -60px auto 0 auto;
+  padding: 40px;
+  border-radius: 10px 10px 0 0;
+}
+
+.article__info--title {
+  width: 100%;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.article__info--body {
+  width: 100%;
+  text-align: justify;
+  margin: 30px 0;
+}
+
+.article__info--category {
+  width: fit-content;
+  margin: 30px 0;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: #fefefe;
+  background-color: #bd1b3c;
+}

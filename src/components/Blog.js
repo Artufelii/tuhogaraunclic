@@ -15,6 +15,7 @@ function Blog() {
       setBlogs(response.data.Blogs)
     }
 
+    document.title = 'Blog | Las Mejores noticias Inmobiliarias'
     getBlogs()
   }, [setBlogs])
 
@@ -34,6 +35,7 @@ function Blog() {
               cover= { item.cover }
               extract= { item.extract }
               body= { item.body }
+              slug= { item.slug }
             />
           </div>
         ))}

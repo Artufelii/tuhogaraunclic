@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
@@ -8,7 +8,12 @@ import Logo from '../Logos/Logo.jpeg'
 
 import ContactForm from './ContactForm'
 
-function Contacto({ handleSubmit }) {
+function Contacto({ handleSubmit, client, processing, succeeded }) {
+
+  useEffect(() => {
+    document.title = 'Contactanos en un Clic'
+  })
+
   return(
     <div className="contacto">
       <div className="contacto__portada">
@@ -17,7 +22,12 @@ function Contacto({ handleSubmit }) {
         </div>
       </div>
       <div className="contacto__formulario">
-        <ContactForm onSubmit={ handleSubmit } /> 
+        <ContactForm 
+          onSubmit={ handleSubmit } 
+          client= { client }
+          processing= { processing }
+          succeeded= { succeeded }
+        /> 
         <div className="contacto__formulario--info">
           <h2>¡Contactanos en un Clic!</h2>
           <div className="contacto__info">

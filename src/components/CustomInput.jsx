@@ -1,11 +1,12 @@
 import React from 'react'
 import './css/CustomInput.css'
 
-const CustomInput = ({ input, type, placeholder, meta: { touched, error }  }) => {
+const CustomInput = ({ input, meta, ...props }) => {
+
   return (
     <div className="custominput">
-      <input {...input}  type={type} placeholder={placeholder} />
-      { touched && error && <p>{ error }</p> }
+      <input { ...input } { ...props }  />
+      { meta.submitFailed && meta.error && <p>{ meta.error }</p> }
     </div>
   )
 }

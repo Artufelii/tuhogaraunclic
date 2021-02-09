@@ -21,3 +21,24 @@
 .propiedad__info--direccion {
   margin: 20px 0;
 }
+
+.propiedad__info--button {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.propiedad__info--button > a > button {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #bd1b3c;
+  font-size: 15px;
+  color: #fefefe;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+
+.propiedad__info--button > a > button:hover {
+  padding: 18px;
+  background-color: #f3204c;
+}

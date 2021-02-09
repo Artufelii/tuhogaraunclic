@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Servicio from './Servicio'
 import { faCheck, faHome, faBullhorn } from '@fortawesome/free-solid-svg-icons'
 import './css/Servicios.css'
 
 function Servicios() {
+
+  useEffect(() => {
+    document.title  = 'Nuestros Mejores Servicios a un Clic'
+  })
+
   return (
     <div className="servicios">
       <div className="servicios__portada">

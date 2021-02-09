@@ -31,7 +31,7 @@
   outline: #bd1b3c;
 }
 
-.contact__form > button {
+.button {
   width: 100%;
   height: 30px;
   background-color: #bd1b3c;
@@ -42,4 +42,17 @@
   color: #fefefe;
   cursor: pointer;
   outline: none;
+}
+
+.button__disabled {
+  width: 100%;
+  height: 30px;
+  margin-top: 30px;
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  outline: none;
+  background-color: #616161;
+  color: #232323;
+  cursor: not-allowed;
 }

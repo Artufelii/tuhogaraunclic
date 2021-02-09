@@ -2,10 +2,10 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import './css/BlogArticle.css'
 
-function BlogArticle({ title, category, cover, extract }) {
+function BlogArticle({ slug, title, category, cover, extract }) {
   return (
     <div className="blogArticle">
-      <Link to = '/blog'>
+      <Link to = { `/blog/${slug}` } >
         <div className="blogArticle__image">
           <img src={ cover } alt={ title }/>
         </div>
@@ -15,7 +15,7 @@ function BlogArticle({ title, category, cover, extract }) {
       <div className="blogArticle__extract">
         <p>{ extract }</p>
       </div>
-      <Link to = '/blog'>Leer mas</Link>
+      <Link to = { `/blog/${slug}` } >Leer mas</Link>
     </div>
   )
 }

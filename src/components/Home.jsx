@@ -10,7 +10,7 @@ import ContactForm from './ContactForm'
 import Logo from '../Logos/Logo.jpeg'
 import './css/Home.css'
 
-function Home({ handleSubmit }){
+function Home({ handleSubmit, client, processing, succeeded }){
 
   const [ blogs, setBlogs ] = useState([])
 
@@ -22,7 +22,8 @@ function Home({ handleSubmit }){
       })
       setBlogs(response.data.Blogs)
     }
-
+    
+    document.title = 'Tu Hogar A Un Clic | Vender, Comprar o Rentar a un Clic de distancia'
     getBlogs()
   }, [setBlogs])
 
@@ -101,12 +102,18 @@ function Home({ handleSubmit }){
               cover= {item.cover} 
               extract= {item.extract} 
               body= {item.body} 
+              slug= { item.slug }
             />
           </div>
         ))}
       </div>
       <div className="home__contact">
-        <ContactForm onSubmit={ handleSubmit } /> 
+        <ContactForm 
+          onSubmit= { handleSubmit } 
+          client= { client }
+          processing= { processing }
+          succeeded= { succeeded }
+        /> 
         <div className="home__contact--info">
           <h2>¡Contactanos en un Clic!</h2>
           <div className="contact__info">

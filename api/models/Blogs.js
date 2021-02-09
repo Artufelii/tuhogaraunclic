@@ -7,6 +7,7 @@ const Blogs = mongoose.model('Blog', new Schema({
 	cover: String,
 	extract: String,
 	body: String,
+	slug: String,
 }))
 
 module.exports = Blogs
