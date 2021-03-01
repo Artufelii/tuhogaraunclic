@@ -27,18 +27,42 @@ router.get('/propiedades/:slug', async (req, res) => {
 
 router.post('/new-property', async (req, res) => {
 
-	const { title, description, adress, price, cover } = req.body
+	const { 
+		title, 
+		description, 
+		adress, 
+		price, 
+		cover, 
+		image1, 
+		image2, 
+		image3, 
+		image4, 
+		image5, 
+		image6, 
+		image7, 
+		image8, 
+		image9
+	} = req.body
 	
-	const newProperty = new Propiedades({
+	const newProperty = await Propiedades.create({
 		title,
 		description,
 		adress,
 		price,
-		cover,
+		images: {
+			cover, 
+			image1, 
+			image2, 
+			image3, 
+			image4, 
+			image5, 
+			image6, 
+			image7, 
+			image8, 
+			image9
+		},
 		slug: slug(title, { charmap: slug.charmap, multicharmap: slug.multicharmap })
 	})
-
-	await newProperty.save()
 
 	res
 		.status(200)

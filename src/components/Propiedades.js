@@ -36,7 +36,7 @@ function Propiedades(){
               title= { property.title }
               adress= { property.adress }
               price= { property.price }
-              cover= { property.cover }
+              cover= { property.images.cover }
               slug= { property.slug }
             />
           </div>

@@ -64,14 +64,12 @@ router.post('/send-message', async (req, res) => {
 		html: html,
 	})
 
-	const newClient = new Cliente ({
+	const newClient = await Cliente.create ({
 		name,
 		email,
 		phone,
 		message: message || '',
 	})
-
-	await newClient.save()
 
 	res
 		.status(200)

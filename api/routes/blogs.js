@@ -25,7 +25,7 @@ router.get('/blog/:slug', async(req, res) => {
 router.post('/new-blog', async (req, res) => {
 	const { title, category, cover, extract, body } = req.body
 	
-	const newBlog = new Blog({
+	const newBlog = await Blog.create ({
 		title,
 		category,
 		cover,
@@ -33,8 +33,6 @@ router.post('/new-blog', async (req, res) => {
 		body,
 		slug: slug(title, { charmap: slug.charmap, multicharmap: slug.multicharmap })
 	})
-
-	await newBlog.save()
 
 	res
 	.status(200)

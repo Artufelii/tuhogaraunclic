@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Switch, Route, useHistory } from 'react-router-dom'
+
 import './App.css';
 import axios from './components/axios'
 import Header from './components/Header'
@@ -11,9 +12,11 @@ import Servicios from './components/Servicios'
 import Blog from './components/Blog'
 import Article from './components/Article'
 import Property from './components/Property'
+import Login from './components/Login'
+import Dashboard from './components/Dashboard'
 
 function App() {
-
+  const history = useHistory()
   const [succeeded, setSucceeded] = useState(false)
   const [processing, setProcessing] = useState(false)
   const [client, setClient] = useState("")
@@ -45,10 +48,24 @@ function App() {
 
   }
 
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      if (window.location.pathname === '/login') {
+        history.push('/dashboard/desk')
+      }
+    } else {
+      if(/\/dashboard\/./.test(window.location.pathname)) {
+        history.push('/login')
+      }
+    }
+  }, [history])
+
   return (
-    <Router>
       <div className="App">
         <Switch>
+          <Route exact path="/dashboard/desk" component={Dashboard} />
+          <Route exact path="/login" component={Login}/>
           <Route path="/propiedades/:slug">
             <Header />
             <Property />
@@ -84,7 +101,7 @@ function App() {
             />
             <Footer />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Header />
             <Home
               handleSubmit={ handleSubmit }
@@ -96,7 +113,6 @@ function App() {
           </Route>
         </Switch>
       </div>
-    </Router>
   );
 }
 
