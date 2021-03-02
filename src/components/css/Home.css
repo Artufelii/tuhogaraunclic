@@ -8,7 +8,7 @@
 .home__inicio{
   width: 100%;
   height: 100vh;
-  background-image: url('https://cdn.shortpixel.ai/client/q_glossy,ret_img/http://tuhogaraunclic.com/wp-content/uploads/2018/07/architecture-building-daylight-206172-scaled.jpg');
+  background-image: url('https://res.cloudinary.com/fragmods/image/upload/v1614649661/Logos/portada_home_nzqogy.jpg');
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -106,7 +106,7 @@
   height: auto;
   margin: 0 auto;
   padding: 20px;
-  background-image: url('https://cdn.shortpixel.ai/client/q_glossy,ret_img/http://tuhogaraunclic.com/wp-content/uploads/2018/07/apartment-architecture-art-276724.jpg');
+  background-image: url('https://res.cloudinary.com/fragmods/image/upload/v1614649661/Logos/sala_home_voqnug.jpg');
   background-attachment: fixed;
 }
 
@@ -172,7 +172,7 @@
   height: auto;
   margin: 0 auto;
   padding: 20px;
-  background-image: url('https://cdn.shortpixel.ai/client/q_glossy,ret_img/http://tuhogaraunclic.com/wp-content/uploads/2018/07/apartment-architectural-design-architecture-323780-scaled.jpg');
+  background-image: url('https://res.cloudinary.com/fragmods/image/upload/v1614649661/Logos/apartment_home_u5ivls.jpg');
   background-attachment: fixed;
   background-size: cover;
   display: flex;
