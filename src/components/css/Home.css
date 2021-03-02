@@ -8,7 +8,7 @@
 .home__inicio{
   width: 100%;
   height: 100vh;
-  background-image: url('../../Logos/portada_home.png');
+  background-image: url('https://cdn.shortpixel.ai/client/q_glossy,ret_img/http://tuhogaraunclic.com/wp-content/uploads/2018/07/architecture-building-daylight-206172-scaled.jpg');
   background-size: cover;
   display: flex;
   justify-content: center;
