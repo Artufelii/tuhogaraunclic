@@ -106,7 +106,7 @@
   height: auto;
   margin: 0 auto;
   padding: 20px;
-  background-image: url('../../Logos/sala_home.jpg');
+  background-image: url('https://cdn.shortpixel.ai/client/q_glossy,ret_img/http://tuhogaraunclic.com/wp-content/uploads/2018/07/apartment-architecture-art-276724.jpg');
   background-attachment: fixed;
 }
 
@@ -172,7 +172,7 @@
   height: auto;
   margin: 0 auto;
   padding: 20px;
-  background-image: url('../../Logos/apartment_home.jpg');
+  background-image: url('https://cdn.shortpixel.ai/client/q_glossy,ret_img/http://tuhogaraunclic.com/wp-content/uploads/2018/07/apartment-architectural-design-architecture-323780-scaled.jpg');
   background-attachment: fixed;
   background-size: cover;
   display: flex;
