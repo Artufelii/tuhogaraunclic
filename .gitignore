@@ -22,7 +22,7 @@
 .env.production.local
 
 #imagenes
-*.jpg
+#*.jpg
 
 npm-debug.log*
 yarn-debug.log*
