@@ -13,7 +13,7 @@ import Blog from './components/Blog'
 import Article from './components/Article'
 import Property from './components/Property'
 
-function App() {
+const App = () => {
   const [succeeded, setSucceeded] = useState(false)
   const [processing, setProcessing] = useState(false)
   const [client, setClient] = useState("")

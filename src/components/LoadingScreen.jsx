@@ -2,7 +2,7 @@ import React from "react"
 import Logo from '../Logos/Logo_png.png'
 import './css/LoadingScreen.css'
 
-function LoadingScreen(){
+const LoadingScreen = () => {
   return(
    <div className="loading">
      <img src={ Logo } alt="Tuhogar_Logo" />

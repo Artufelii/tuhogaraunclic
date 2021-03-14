@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react"
 import { useParams } from 'react-router-dom'
+import parser from "html-react-parser"
+
 import axios from './axios'
 import LoadingScreen from './LoadingScreen'
 import './css/Article.css'
 
-function Article(){
+const Article = () => {
 
   const [article, setArticle] = useState({})
   const [loading, setLoading] = useState(false)
@@ -30,15 +32,12 @@ function Article(){
       { loading ? 
           <LoadingScreen />  :
           <div className="article">
-              <div className="article__cover">
-                <img src= { article.cover } alt= { article.title } />
-              </div>
-            <div className="article__info">
-              <div className="article__info--title">
+              <div className="article__cover" style={{backgroundImage: `url(${ article.cover })`}}>
                 <h1>{ article.title }</h1>
               </div>
+            <div className="article__info">
               <div className="article__info--body">
-                { article.body }
+                { article && article.body && parser(article.body.toString()) }
               </div>
               <div className="article__info--category">
                 { article.category }
