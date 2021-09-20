@@ -8,7 +8,6 @@ import axios from './axios'
 import Propiedad from './Propiedad.js'
 import ContactForm from './ContactForm'
 import HomeService from './HomeService'
-import HomeSocial from './HomeSocial.js'
 import Logo from '../Logos/Logo_png.png'
 import './css/Home.css'
 
@@ -69,24 +68,24 @@ function Home({ handleSubmit, client, processing, succeeded }){
         />
         <div className="home__media--social">
           <h2>¡Siguenos en nuestras Redes Sociales!</h2>
-          <HomeSocial 
-            clase='facebook'
-            link='https://www.facebook.com/TuHogarUnClic'
-            logo={ faFacebookSquare }
-            title='@TuHogarUnClic'
-          />
-          <HomeSocial 
-            clase='youtube'
-            link='https://www.youtube.com/channel/UCpxOn1TMfuTcvFX6eAiXWVg'
-            logo={ faYoutube }
-            title='Tu Hogar a Un Clic'
-          />
-          <HomeSocial 
-            clase='instagram'
-            link='https://www.instagram.com/tuhogarunclic/?hl=es'
-            logo={ faInstagram }
-            title='@tuhogarunclic'
-          />
+          <div className='home__media--social-facebook'>
+            <a href='https://www.facebook.com/TuHogarUnClic' target= "_blank" rel="noreferrer">
+              <FontAwesomeIcon icon={ faFacebookSquare } />
+              <h4>@TuHogarUnClic</h4>
+            </a>
+          </div>
+          <div className='home__media--social-youtube'>
+            <a href='https://www.youtube.com/channel/UCpxOn1TMfuTcvFX6eAiXWVg' target= "_blank" rel="noreferrer">
+              <FontAwesomeIcon icon={ faYoutube } />
+              <h4>Tu Hogar a Un Clic</h4>
+            </a>
+          </div>
+          <div className='home__media--social-instagram'>
+            <a href='https://www.instagram.com/tuhogarunclic/?hl=es' target= "_blank" rel="noreferrer">
+              <FontAwesomeIcon icon={ faInstagram } />
+              <h4>@tuhogarunclic</h4>
+            </a>
+          </div>
         </div>
       </div>
       <div className="home__properties">
