@@ -8,7 +8,7 @@ import axios from './axios'
 import Propiedad from './Propiedad.js'
 import ContactForm from './ContactForm'
 import HomeService from './HomeService'
-import HomeSocial from './HomeSocial'
+import HomeSocial from './HomeSocial.js'
 import Logo from '../Logos/Logo_png.png'
 import './css/Home.css'
 
