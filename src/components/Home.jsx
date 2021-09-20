@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faHome, faBullhorn, faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookSquare, faInstagram, faYoutube, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import axios from './axios'
-//import BlogArticle from './BlogArticle'
 import Propiedad from './Propiedad.js'
 import ContactForm from './ContactForm'
 import HomeService from './HomeService'
@@ -102,16 +101,6 @@ function Home({ handleSubmit, client, processing, succeeded }){
                 cover= { item.images.cover }
                 slug= { item.slug }
               />
-              {/*
-              <BlogArticle 
-                title= {item.title} 
-                category= {item.category} 
-                cover= {item.cover} 
-                extract= {item.extract} 
-                body= {item.body} 
-                slug= { item.slug }
-              />
-              */}
             </div>
           ))}
         </div>
