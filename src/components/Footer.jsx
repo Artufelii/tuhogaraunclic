@@ -7,7 +7,7 @@ function Footer(){
     <div className='footer'>
       <nav className="footer__navigation">
         <ul className="footer__navigation--list">
-          <li><Link to="/blog">Blog</Link></li>
+          {/*<li><Link to="/blog">Blog</Link></li>*/} 
           <li><Link to="/propiedades">Propiedades</Link></li>
           <li><Link to="/servicios">Servicios</Link></li>
           <li><Link to="/contacto">Contacto</Link></li>

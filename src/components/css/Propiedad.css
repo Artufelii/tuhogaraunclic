@@ -16,6 +16,7 @@
 
 .propiedad__info {
   padding: 0 30px 30px 30px;
+  text-align: center;
 }
 
 .propiedad__info--direccion {
@@ -28,17 +29,17 @@
 }
 
 .propiedad__info--button > a > button {
-  padding: 15px;
+  padding: 18px;
   border: none;
   border-radius: 5px;
   background-color: #bd1b3c;
-  font-size: 15px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
   color: #fefefe;
   cursor: pointer;
   transition: 0.3s all ease-in-out;
 }
 
 .propiedad__info--button > a > button:hover {
-  padding: 18px;
   background-color: #f3204c;
 }

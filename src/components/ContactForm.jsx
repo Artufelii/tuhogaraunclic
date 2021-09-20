@@ -25,9 +25,9 @@ const validate = values => {
 }
 
 
-let ContactForm = props => {
+const ContactForm = props => {
 
-  const { handleSubmit, client, processing, succeeded,  dispatch, form } = props
+  const { handleSubmit, client, processing, succeeded,  dispatch, form, title='¡Tu opinion es importante para nosotros!' } = props
 
   useEffect(() => {
     if (succeeded) {
@@ -37,8 +37,8 @@ let ContactForm = props => {
 
 
   return (
-    <form onSubmit={ handleSubmit } className="contact__form">
-      <h2>{client !== '' ? `¡Gracias por tu mensaje ${client}!` : '¡Tu opinion es importante para nosotros!'}</h2>
+    <form id="contact" onSubmit={ handleSubmit } className="contact__form">
+      <h2>{client !== '' ? `¡Gracias por tu mensaje ${client}!` : title }</h2>
       <h5>Nombre:</h5>
       <Field name="name" component={CustomInput} placeholder="Nombre" type="text" />
       <h5>Correo:</h5>
@@ -46,7 +46,7 @@ let ContactForm = props => {
       <h5>Teléfono:</h5>
       <Field name="phone" component={CustomInput} placeholder="Telefóno" type="text" />
       <h5>Mensaje:</h5>
-      <Field name="message" component='textarea' placeholder="Mensaje" />
+      <Field name="message" component='textarea' placeholder="Cuentanos sobre ti, lo que te gusta o sobre la casa de tus sueños" />
       <button className={ succeeded ? 'button__disabled' : 'button' } type="submit" disabled= { succeeded } >
         {processing ? "Enviando..." : "Enviar"}
       </button>

@@ -1,5 +1,6 @@
 .contact__form {
-  width: 50%;
+  width: 100%;
+  max-width: 550px;
   padding: 30px;
   position: relative;
   display: flex;
@@ -12,6 +13,10 @@
   border-radius: 5px;
 } 
 
+.contact__form > h2 {
+  text-align: center;
+}
+
 .contact__form > h5 {
   margin: 15px auto 3px 0;
 }
@@ -21,6 +26,7 @@
   max-width: 100%;
   min-width: 100%;
   min-height: 150px;
+  max-height: 300px;
   padding: 5px;
   font-family: 'Arial';
   border: 1px solid transparent;
@@ -42,6 +48,10 @@
   color: #fefefe;
   cursor: pointer;
   outline: none;
+}
+
+.button:hover {
+  background-color: #f3204c;
 }
 
 .button__disabled {

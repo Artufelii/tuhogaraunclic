@@ -13,7 +13,7 @@ function Header(){
           </div>
         </Link>
         <ul className="header__navigation--list">
-          <li><Link to="/blog">Blog</Link></li>
+          {/*<li><Link to="/blog">Blog</Link></li>*/}
           <li><Link to="/propiedades">Propiedades</Link></li>
           <li><Link to="/servicios">Servicios</Link></li>
           <li><Link to="/contacto">Contacto</Link></li>

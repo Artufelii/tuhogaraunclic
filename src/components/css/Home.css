@@ -46,7 +46,6 @@
 }
 
 .home__inicio--call > button:hover {
-  padding: 20px;
   background-color: #f3204c;
 }
 
@@ -68,17 +67,30 @@
 .home__presentation--services {
   margin: 10px 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
 .home__presentation--service {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   width: 30%;
   height: auto;
   margin: 60px auto;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .home__presentation--service > a {
   text-decoration: none;
+  color: #000;
+}
+
+.home__presentation--service > a:hover {
+  color: #f3204c;
 }
 
 .home__presentation--service > a > h2 {
@@ -93,11 +105,6 @@
 
 .home__presentation--service svg:hover {
   color: #f3204c;
-  font-size: 80px;
-}
-
-.home__presentation--service p {
-  margin-top: 30px;
 }
 
 .home__media {
@@ -146,24 +153,36 @@
 }
 
 .home__media--social a:hover {
-  font-size: 25px;
+  color: #f3204c;
 }
 
-.home__blogs {
+.home__properties {
   width: 90%;
   height: auto;
   margin: 0 auto;
   padding: 30px;
   background-color: #fefefe;
-  display: grid;
-  grid-template-areas: 'title title title'
-                       'blog1 blog2 blog3';
+  text-align: center;
 }
 
-.home__blogs > h2 {
-  grid-area: title;
-  align-self: center;
+.home__properties > h2 {
   margin: 20px auto;
+}
+
+.home__properties--property {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.home__properties--property .property {
+  width: 30%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .home__contact {
@@ -214,7 +233,7 @@
 }
 
 .contact__info > a:hover {
-  font-size: 25px;
+  color: #f3204c;
 }
 
 .contact__info > a > svg {
@@ -226,11 +245,5 @@
 }
 
 .contact__logo > a > img {
-  height: 150px;
-  transition: 0.5s  all ease-in-out;
+  height: 120px;
 }
-
-.contact__logo > a > img:hover {
-  transform: scale(1.2)
-}
-

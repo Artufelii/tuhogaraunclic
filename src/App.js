@@ -50,7 +50,13 @@ const App = () => {
         <Header />
         <Switch>
           <Route path="/propiedades/:slug">
-            <Property />
+            <Property 
+              handleSubmit={ handleSubmit }
+              client= { client }
+              processing= { processing }
+              succeeded= { succeeded }
+              title='¿Te gusta esta propiedad? ¡Apartala ahora!'
+            />
           </Route>
           <Route path="/blog/:slug">
             <Article />

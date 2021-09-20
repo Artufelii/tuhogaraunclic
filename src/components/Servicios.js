@@ -23,7 +23,7 @@ function Servicios() {
             icon = { faCheck } 
             title = 'Avalúos'
             headline = '¡No vendas ni compres una propiedad por mas o menos de lo que vale!'
-            description = 'Si estas pensando en comprar o vender una propiedad nosotos te ayudamos a saber si el precio es el indicado, para que tu estes seguro de que estas pagando o vendiendo en el mejor precio del mercado'
+            description = '¿Quieres comprar o vender una propiedad? no pagues o recivas menos de lo indicado, nosotros te decimos cual es el mejor precio del mercado.'
             precio = 'desde $3500.00 MXN'
           />
         </div>
