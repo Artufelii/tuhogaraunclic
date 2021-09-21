@@ -7,7 +7,7 @@ import { faFacebookSquare, faInstagram, faYoutube, faWhatsapp } from '@fortaweso
 import axios from './axios'
 import Propiedad from './Propiedad.js'
 import ContactForm from './ContactForm'
-import HomeService from './HomeService'
+import ServiceGrid from './ServiceGrid'
 import Logo from '../Logos/Logo_png.png'
 import './css/Home.css'
 
@@ -41,17 +41,17 @@ function Home({ handleSubmit, client, processing, succeeded }){
       <div className="home__presentation">
         <h2>¡Conoce nuestros Servicios en Un Clic!</h2>
         <div className="home__presentation--services">
-          <HomeService 
+          <ServiceGrid 
             icon={faCheck}
             title='Avalúos'
             text='¡No vendas ni compres una propiedad por mas o menos de lo que vale!'
           />
-          <HomeService 
+          <ServiceGrid 
             icon={faHome}
             title='Aseoria Inmobiliaria'
             text='¿Quieres comprar, vender o rentar y no sabes como empezar?'
           />
-          <HomeService 
+          <ServiceGrid 
             icon={faBullhorn}
             title='Publicidad para tu Casa'
             text='¡Deja de publicarte localmente y empieza a hacerlo en grande!'
