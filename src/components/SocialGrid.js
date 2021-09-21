@@ -12,4 +12,4 @@ const SocialGrid = ({ clase, link, logo, title }) => {
   ) 
 }
 
-export default HomeSocial
+export default SocialGrid 

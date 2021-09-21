@@ -15,4 +15,4 @@ const ServiceGrid = ({ icon, title, text }) => {
   ) 
 }
 
-export default HomeService
+export default ServiceGrid 
