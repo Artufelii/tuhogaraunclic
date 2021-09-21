@@ -18,7 +18,8 @@ The server will not reload if you make edits.
 Runs the development server for the api.\
 Open [http://localhost:4001](http://localhost:4001) to make requests.
 
-The server will reload if you make edits.
+The server will reload if you make edits.\
+You will also see all the requests that you make.
 
 ### `yarn dev`
 
