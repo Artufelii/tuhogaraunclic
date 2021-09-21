@@ -4,7 +4,7 @@ import { Carousel } from 'react-responsive-carousel'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBed, faBath, faExpand, faCarSide, faRulerCombined } from '@fortawesome/free-solid-svg-icons'
 
-import axios from './axios'
+import { getInfo } from '../helpers'
 import LoadingScreen from './LoadingScreen'
 import ContactForm from './ContactForm'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
@@ -17,16 +17,12 @@ const Property = ({ handleSubmit, client, processing, succeeded, title }) => {
 
   useEffect(() => {
     setLoading(true)
-    const getProperty = async () => {
-      const response = await axios({
-        method: 'GET',
-        url: `/propiedades/${slug}`,
+    getInfo('propiedades', slug)
+      .then(response => {
+        setProperty(response.data.propiedad)
+        document.title = response.data.propiedad.title
       })
-      setProperty(response.data.propiedad)
-      document.title = response.data.propiedad.title
-      setLoading(false)
-    }
-    getProperty()
+      .then(setLoading(false))
   }, [setLoading, slug, setProperty] )
 
   return(

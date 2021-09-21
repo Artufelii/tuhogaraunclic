@@ -1,10 +1,10 @@
 {
   "name": "tuhogar",
   "version": "0.1.0",
-  "engines": {
-    "node": "14.x"
-  },
   "private": true,
+  "engine": {
+    "node": "14.x":
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",

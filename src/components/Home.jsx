@@ -1,33 +1,21 @@
-import React, { useState, useEffect } from "react"
+import React, { useEffect } from "react"
 import ReactPlayer from 'react-player'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faHome, faBullhorn, faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookSquare, faInstagram, faYoutube, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
-import axios from './axios'
-import Propiedad from './Propiedad.js'
+import Propiedad from './Propiedad'
 import ContactForm from './ContactForm'
 import ServiceGrid from './ServiceGrid'
+import SocialGrid from './SocialGrid'
 import Logo from '../Logos/Logo_png.png'
 import './css/Home.css'
 
-function Home({ handleSubmit, client, processing, succeeded }){
-
-  const [ properties, setProperties ] = useState([])
+const Home = ({ handleSubmit, client, processing, succeeded, properties }) => {
 
   useEffect(() => {
-    const getProperties = async () => {
-      const response = await axios({
-        method: 'GET',
-        url: '/propiedades',
-      })
-
-      setProperties(response.data.propiedades)
-    }
-    
     document.title = 'Tu Hogar A Un Clic | Vender, Comprar o Rentar a un Clic de distancia'
-    getProperties()
-  }, [setProperties])
+  })
 
   return(
     <div className="home">
@@ -68,24 +56,24 @@ function Home({ handleSubmit, client, processing, succeeded }){
         />
         <div className="home__media--social">
           <h2>¡Siguenos en nuestras Redes Sociales!</h2>
-          <div className='home__media--social-facebook'>
-            <a href='https://www.facebook.com/TuHogarUnClic' target= "_blank" rel="noreferrer">
-              <FontAwesomeIcon icon={ faFacebookSquare } />
-              <h4>@TuHogarUnClic</h4>
-            </a>
-          </div>
-          <div className='home__media--social-youtube'>
-            <a href='https://www.youtube.com/channel/UCpxOn1TMfuTcvFX6eAiXWVg' target= "_blank" rel="noreferrer">
-              <FontAwesomeIcon icon={ faYoutube } />
-              <h4>Tu Hogar a Un Clic</h4>
-            </a>
-          </div>
-          <div className='home__media--social-instagram'>
-            <a href='https://www.instagram.com/tuhogarunclic/?hl=es' target= "_blank" rel="noreferrer">
-              <FontAwesomeIcon icon={ faInstagram } />
-              <h4>@tuhogarunclic</h4>
-            </a>
-          </div>
+          <SocialGrid 
+            clase='facebook'
+            link='https://www.facebook.com/TuHogarUnClic'
+            logo={ faFacebookSquare }
+            title='@TuHogarUnClic'
+          />
+          <SocialGrid 
+            clase='youtube'
+            link='https://www.youtube.com/channel/UCpxOn1TMfuTcvFX6eAiXWVg'
+            logo={ faYoutube }
+            title='Tu Hogar a Un Clic'
+          />
+          <SocialGrid 
+            clase='instagram'
+            link='https://www.instagram.com/tuhogarunclic/?hl=es'
+            logo={ faInstagram }
+            title='@tuhogarunclic'
+          />
         </div>
       </div>
       <div className="home__properties">

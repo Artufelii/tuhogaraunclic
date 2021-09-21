@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Switch, Route } from 'react-router-dom'
 
 import './App.css';
-import axios from './components/axios'
+import { getInfo, sendInfo } from './helpers'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './components/Home'
@@ -17,33 +17,30 @@ const App = () => {
   const [succeeded, setSucceeded] = useState(false)
   const [processing, setProcessing] = useState(false)
   const [client, setClient] = useState("")
+  const [ properties, setProperties ] = useState([])
 
-  const handleSubmit = async (payload) => {
-
-    const { name, email, phone, message } = payload
+  const handleSubmit = (payload) => {
 
     setProcessing(true)
 
-    const response = await axios({
-      method: 'POST',
-      url: '/send-message',
-      data: {
-        name,
-        email,
-        phone,
-        message,
-      }
-    })
-    setClient(response.data.newClient.name)
-    setSucceeded(true)
-    setProcessing(false)
-
+    sendInfo(payload)
+      .then(response => setClient(response.data.newClient.name))
+      .then(setSucceeded(true))
+      .then(setProcessing(false))
+    
     setTimeout(() => {
       setSucceeded(false)
       setClient("")
     }, 10000)
 
   }
+
+  useEffect(() => {
+
+    getInfo('propiedades', '')
+      .then(response => setProperties(response.data.propiedades))
+    
+  }, [setProperties])
 
   return (
       <div className="App">
@@ -65,7 +62,7 @@ const App = () => {
             <Blog />
           </Route>
           <Route path="/propiedades">
-            <Propiedades />
+            <Propiedades properties={ properties }/>
           </Route>
           <Route path="/servicios">
             <Servicios />
@@ -84,6 +81,7 @@ const App = () => {
               client= { client }
               processing= { processing }
               succeeded= { succeeded }
+              properties={ properties }
             />
           </Route>
         </Switch>
