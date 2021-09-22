@@ -8,6 +8,21 @@ In the project directory, you can run:
 
 ### `yarn start`
 
+Runs the production server for the api.\
+Open [http://localhost:4001](http://localhost:4001) to make requests.
+
+The server will not reload if you make edits.
+
+### `yarn serve`
+
+Runs the development server for the api.\
+Open [http://localhost:4001](http://localhost:4001) to make requests.
+
+The server will reload if you make edits.\
+You will also see all the requests that you make.
+
+### `yarn dev`
+
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
