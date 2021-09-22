@@ -1,5 +1,7 @@
 import axios from './axios'
 
+const apiKey = process.env.REACT_APP_API_KEY
+
 export const getInfo = async (url, slug) => {
 
   if (slug !== '' || slug !== undefined) {
@@ -20,6 +22,7 @@ export const getInfo = async (url, slug) => {
 }
 
 export const sendInfo = async (payload) => {
+  console.log(payload)
   const { name, email, phone, message } = payload
 
   const response = await axios({
@@ -35,3 +38,10 @@ export const sendInfo = async (payload) => {
 
   return response
 } 
+
+export const getLocation = async (adress) => {
+
+  const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?key=${apiKey}&address=${adress}`)
+
+  return response
+}

@@ -25,7 +25,7 @@ router.get('/propiedades/:slug', async (req, res) => {
 
 })
 
-router.post('/new-property', async (req, res) => {
+router.post('/propiedades/new-property', async (req, res) => {
 
 	const { 
 		title, 
@@ -33,6 +33,11 @@ router.post('/new-property', async (req, res) => {
 		adress, 
 		price, 
 		cover, 
+		land,
+		construction,
+		bedrooms,
+		restrooms,
+		parking,
 		image1, 
 		image2, 
 		image3, 
@@ -44,13 +49,18 @@ router.post('/new-property', async (req, res) => {
 		image9,
 	} = req.body
 
-	//const imagenes = req.files
-
 	const newProperty = await Propiedades.create({
 		title,
 		description,
 		adress,
 		price,
+		chars: {
+			land,
+			construction,
+			bedrooms,
+			restrooms,
+			parking,
+		},
 		images: {
 			cover, 
 			image1: image1 || '', 
