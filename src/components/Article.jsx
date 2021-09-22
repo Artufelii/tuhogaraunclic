@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { useParams } from 'react-router-dom'
 import parser from "html-react-parser"
 
-import axios from './axios'
+import axios from '../helpers/axios'
 import LoadingScreen from './LoadingScreen'
 import './css/Article.css'
 

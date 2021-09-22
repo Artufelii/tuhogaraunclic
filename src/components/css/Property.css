@@ -32,7 +32,6 @@
 .property__info {
   position: relative;
   width: 90%;
-  max-width: 1280px;
   height: auto;
   padding: 40px;
   margin: -60px auto 0 auto;
@@ -43,35 +42,36 @@
 .property__info--price {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 30px auto;
   padding: 0 40px;
 }
 
 .property__info--galery,
 .property__info--chars {
-  width: 50%;
+  width: 40%;
 }
 
-.property__info--chars {
-  padding: 0 40px;
-}
+/*.property__info--chars {*/
+  /*padding: 0 40px;*/
+/*}*/
 
 .property__info--body {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 0 auto;
   padding: 0 40px;
 }
 
 .property__info--body .title,
 .property__info--body .contact {
-  width: 50%;
+  width: 40%;
 }
 
 .property__info--body .contact {
   position: sticky;
-  padding: 0 40px;
+  top: 150px;
+  align-self: flex-start;
 }
 
 .property__info--body .title p {
@@ -79,14 +79,12 @@
 }
 
 .mapa {
-  background-color: #ddd;
+  background-color: #ccc;
   margin: 30px auto;
-  width: 400px;
+  width: 600px;
   height: 400px;
 }
 
-/*.property__info--galery > img {
-  max-width: 100%;
-}*/
+
 
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import BlogArticle from './BlogArticle'
-import axios from './axios'
+import axios from '../helpers/axios'
 import './css/Blog.css'
 
 function Blog() {
