@@ -44,6 +44,7 @@
 }
 
 .servicios__contenido--servicio {
+  width: 30%;
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
@@ -52,6 +53,14 @@
 }
 
 /*--------- MEDIA QUERIES ----------*/
+
+@media (max-width: 1200px) {
+
+  .servicios__contenido--servicio {
+    width: 100%;
+  }
+
+}
 
 @media (max-width: 600px) {
 
@@ -64,5 +73,6 @@
     margin: 0;
     padding: 10px;
   }
+
 
 }
