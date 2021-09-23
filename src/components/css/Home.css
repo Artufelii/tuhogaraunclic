@@ -247,3 +247,87 @@
 .contact__logo > a > img {
   height: 120px;
 }
+
+/*---------- MEDIA QUERIES ----------*/
+
+@media (max-width: 800px) {
+  .home__properties--property .property,
+  .home__presentation--service {
+    width: 45%;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .home__filter {
+    height: 50vh;
+  }
+  
+  .home__inicio{
+    height: 50vh;
+  }
+
+  .home__inicio--call {
+    width: 95%;
+  }
+  
+  .home__inicio--call > h1 {
+    font-size: 33px;
+  }
+
+  .home__presentation {
+    width: 100%;
+    margin: 0;
+  }
+  
+  .home__presentation h1 {
+    margin: 30px auto;
+  }
+  .home__presentation--services {
+    display: block;
+  }
+
+  .home__properties--property .property,
+  .home__presentation--service {
+    width: 95%;
+  }
+
+  .home__media {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .home__media--video {
+    display: none;
+  }
+
+  .home__media--social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .home__media--social > a > h4{
+    font-size: 15px;
+  }
+
+  .home__properties {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .home__properties--property {
+    display: block;
+  }
+
+  .home__contact {
+    width: 100%;
+    padding: 10px;
+    display: block;
+  }
+
+  .home__contact--info {
+    display: none;
+  }
+
+}

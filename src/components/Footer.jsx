@@ -1,5 +1,6 @@
 import React from "react"
-import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebookSquare, faInstagram, faYoutube, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import './css/Footer.css'
 
 function Footer(){
@@ -7,12 +8,11 @@ function Footer(){
     <div className='footer'>
       <nav className="footer__navigation">
         <ul className="footer__navigation--list">
-          {/*<li><Link to="/blog">Blog</Link></li>*/} 
-          <li><Link to="/propiedades">Propiedades</Link></li>
-          <li><Link to="/servicios">Servicios</Link></li>
-          <li><Link to="/contacto">Contacto</Link></li>
+          <li><a href='https://www.facebook.com/TuHogarUnClic'><FontAwesomeIcon icon={ faFacebookSquare } /></a></li>
+          <li><a href='https://www.instagram.com/tuhogarunclic/?hl=es'><FontAwesomeIcon icon={ faInstagram } /></a></li>
+          <li><a href='https://www.youtube.com/channel/UCpxOn1TMfuTcvFX6eAiXWVg'><FontAwesomeIcon icon={ faYoutube } /></a></li>
+          <li><a href="https://api.whatsapp.com/send?phone=525620543331"><FontAwesomeIcon icon={ faWhatsapp } /></a></li>
         </ul>
-        <p>@Copy Rights Tu Hogar a Un Clic 2020</p>
       </nav>
     </div>
     )
