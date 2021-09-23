@@ -98,12 +98,6 @@ const Property = ({ handleSubmit, client, processing, succeeded, title }) => {
                   />
                 </div>
               </div>
-              {/*
-              <div className="property__info--category">
-                <h2>Dirección:</h2>
-                { property.adress }
-              </div>
-              */}
             </div>
           </div>
       }

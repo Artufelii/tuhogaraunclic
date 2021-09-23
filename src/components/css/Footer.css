@@ -30,7 +30,7 @@
 
 /*---------- MEDIA QUERIES ----------*/
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
   .footer {
     width: 100%;
   }
