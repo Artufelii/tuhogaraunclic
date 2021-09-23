@@ -49,7 +49,7 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      <div className="responsive__nav" style={{top: `${top && width <= 400 ? '67px' : top && width <= 800 ? '110px' : '-500px'}`} }>
+      <div className="responsive__nav" style={{top: `${top && width <= 600 ? '67px' : top && width <= 1200 ? '110px' : '-500px'}`} }>
         <ul>
           <li onClick={() => setTop(false)}><Link to="/propiedades">Propiedades</Link></li>
           <li onClick={() => setTop(false)}><Link to="/servicios">Servicios</Link></li>
