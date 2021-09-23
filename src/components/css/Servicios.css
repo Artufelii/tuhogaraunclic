@@ -27,13 +27,14 @@
 }
 
 .servicios__portada--title {
+  text-align: center;
   position: relative;
 }
 
 .servicios__contenido {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   width: 90%;
   height: auto;
   position: relative;
@@ -44,9 +45,35 @@
 }
 
 .servicios__contenido--servicio {
+  width: 30%;
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
   background-color: #f9f9f9;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+/*--------- MEDIA QUERIES ----------*/
+
+@media (max-width: 1200px) {
+
+  .servicios__contenido--servicio {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .servicios__portada {
+    height: 50vh;
+  }
+
+  .servicios__contenido {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+  }
+
+
 }

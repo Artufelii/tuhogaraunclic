@@ -23,25 +23,56 @@
 
 .propiedades__portada--title {
   position: relative;
+  text-align: center;
 }
 
 .propiedades__contenido {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   width: 90%;
   height: auto;
   position: relative;
   margin: -60px auto 0 auto;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px 10px 0 0;
   background-color: #fefefe;
 }
 
 .propiedades__contenido--propiedad {
+  width: 30%;
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
   background-color: #f9f9f9;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+/*---------- MEDIA QUERIES -----------*/
+
+@media (max-width: 1200px) {
+
+  .propiedades__contenido--propiedad {
+    width: 45%;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .propiedades__portada {
+    height: 50vh;
+  }
+
+  .propiedades__contenido {
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+
+  .propiedades__contenido--propiedad {
+    margin: 20px auto;
+    width: 95%;
+  }
+
 }

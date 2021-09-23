@@ -15,7 +15,7 @@ const dashboard = require('./routes/dashboard')
 
 //configuraciones
 require('dotenv').config()
-app.set('port', process.env.PORT || 4001)
+app.set('port', process.env.PORT || 4000)
 app.use(express.static(path.join(__dirname, '../build')))
 
 app.use(bodyParser.json())

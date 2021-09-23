@@ -13,20 +13,25 @@
   align-items: center;
 }
 
-.footer__navigation > p {
-  margin: 0 20px 0 auto;
-}
-
 .footer__navigation--list {
-  width: 50%;
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
   list-style: none;
 }
 
 .footer__navigation--list > li > a {
+  font-size: 30px;
   text-decoration: none;
   color: #232323;
 }
 
+/*---------- MEDIA QUERIES ----------*/
+
+@media (max-width: 600px) {
+  .footer {
+    width: 100%;
+  }
+}
