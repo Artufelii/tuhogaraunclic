@@ -1,8 +1,16 @@
 const { Router }  = require('express')
+const cloudinary = require('cloudinary')
+const fs = require('fs-extra')
 const Propiedades  = require('../models/Propiedades');
 const slug = require('slug')
 
 const router = Router()
+
+cloudinary.config({
+	cloud_name: process.env.CLOUD_NAME,
+	api_key: process.env.API_KEY,
+	api_secret: process.env.API_SECRET,
+})
 
 router.get('/propiedades', async (req, res) => {
 
@@ -32,22 +40,23 @@ router.post('/propiedades/new-property', async (req, res) => {
 		description, 
 		adress, 
 		price, 
-		cover, 
 		land,
 		construction,
 		bedrooms,
 		restrooms,
 		parking,
-		image1, 
-		image2, 
-		image3, 
-		image4, 
-		image5, 
-		image6, 
-		image7, 
-		image8, 
-		image9,
 	} = req.body
+
+	const imagenes = req.files
+	const uploadImages = {}
+
+	for await (let imagen of imagenes) {
+		try {
+			uploadImages[imagen.fieldname] = await cloudinary.v2.uploader.upload(imagen.path)
+		} catch (e) {
+			console.error(e)
+		}
+	}
 
 	const newProperty = await Propiedades.create({
 		title,
@@ -62,19 +71,27 @@ router.post('/propiedades/new-property', async (req, res) => {
 			parking,
 		},
 		images: {
-			cover, 
-			image1: image1 || '', 
-			image2: image2 || '', 
-			image3: image3 || '', 
-			image4: image4 || '', 
-			image5: image5 || '', 
-			image6: image6 || '', 
-			image7: image7 || '', 
-			image8: image8 || '', 
-			image9: image9 || '',
+			cover: uploadImages.cover.secure_url, 
+			image1: uploadImages.imagen1 ? uploadImages.imagen1.secure_url : '', 
+			image2: uploadImages.imagen2 ? uploadImages.imagen2.secure_url : '',
+			image3: uploadImages.imagen3 ? uploadImages.imagen3.secure_url : '', 
+			image4: uploadImages.imagen4 ? uploadImages.imagen4.secure_url : '', 
+			image5: uploadImages.imagen5 ? uploadImages.imagen5.secure_url : '', 
+			image6: uploadImages.imagen6 ? uploadImages.imagen6.secure_url : '', 
+			image7: uploadImages.imagen7 ? uploadImages.imagen7.secure_url : '', 
+			image8: uploadImages.imagen8 ? uploadImages.imagen8.secure_url : '', 
+			image9: uploadImages.imagen9 ? uploadImages.imagen9.secure_url : '',
 		},
 		slug: slug(title, { charmap: slug.charmap, multicharmap: slug.multicharmap })
 	})
+
+	for await (let imagen of imagenes) {
+		try {
+			await fs.unlink(imagen.path)
+		} catch (e) {
+			console.error(e)
+		}
+	}
 
 	res
 		.status(200)

@@ -6,6 +6,13 @@ const Propiedades = mongoose.model('Propiedad', new Schema({
 	description: String,
 	adress: String,
 	price: String,
+	chars: {
+		land: String,
+		construction: String,
+		bedrooms: String,
+		restrooms: String,
+		parking: String,
+	},
 	images: {
 		cover: String,
 		image1: String,
