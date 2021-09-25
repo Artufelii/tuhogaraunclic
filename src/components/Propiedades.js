@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import Propiedad from './Propiedad'
+import PropertyGrid from './PropertyGrid'
 import './css/Propiedades.css'
 
 const Propiedades = ({ properties }) => {
@@ -18,7 +18,7 @@ const Propiedades = ({ properties }) => {
       <div className="propiedades__contenido">
         { properties.map( property => (
           <div className="propiedades__contenido--propiedad" key={ property._id } >
-            <Propiedad 
+            <PropertyGrid
               title= { property.title }
               adress= { property.adress }
               price= { property.price }

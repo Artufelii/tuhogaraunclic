@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faHome, faBullhorn, faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookSquare, faInstagram, faYoutube, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
-import Propiedad from './Propiedad'
+import PropertyGrid from './PropertyGrid'
 import ContactForm from './ContactForm'
 import ServiceGrid from './ServiceGrid'
 import SocialGrid from './SocialGrid'
@@ -81,7 +81,7 @@ const Home = ({ handleSubmit, client, processing, succeeded, properties }) => {
         <div className="home__properties--property" >
           { properties.slice(properties.length-3).map((item) => (
             <div className="property" key={item._id}>
-              <Propiedad 
+              <PropertyGrid
                 title= { item.title }
                 adress= { item.adress }
                 price= { item.price }

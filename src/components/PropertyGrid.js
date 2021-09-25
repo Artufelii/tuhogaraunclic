@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from 'react-router-dom'
 import './css/Propiedad.css'
 
-function Propiedad({ slug, title, adress, price, cover }){
+function PropertyGrid({ slug, title, adress, price, cover }){
   return(
     <div className="propiedad">
       <Link to = { `/propiedades/${slug}` }>
@@ -28,4 +28,4 @@ function Propiedad({ slug, title, adress, price, cover }){
     )
 }
 
-export default Propiedad
+export default PropertyGrid
