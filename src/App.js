@@ -35,7 +35,7 @@ const App = () => {
 
   useEffect(() => {
 
-    getInfo('propiedades', '')
+    getInfo('properties', '')
       .then(response => setProperties(response.data.propiedades))
     
   }, [setProperties])

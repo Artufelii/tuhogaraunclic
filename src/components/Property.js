@@ -19,7 +19,7 @@ const Property = ({ handleSubmit, client, processing, succeeded, title }) => {
 
   useEffect(() => {
     setLoading(true)
-    getInfo('propiedades', slug)
+    getInfo('properties', slug)
       .then(response => {
         setProperty(response.data.propiedad)
         document.title = response.data.propiedad.title

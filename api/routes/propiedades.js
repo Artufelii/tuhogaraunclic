@@ -12,7 +12,7 @@ cloudinary.config({
 	api_secret: process.env.API_SECRET,
 })
 
-router.get('/propiedades', async (req, res) => {
+router.get('/properties', async (req, res) => {
 
 	const propiedades = await Propiedades.find()
 
@@ -22,7 +22,7 @@ router.get('/propiedades', async (req, res) => {
 
 })
 
-router.get('/propiedades/:slug', async (req, res) => {
+router.get('/properties/:slug', async (req, res) => {
 	const { slug } = req.params
 
 	const propiedad = await Propiedades.findOne({ slug })
@@ -33,7 +33,7 @@ router.get('/propiedades/:slug', async (req, res) => {
 
 })
 
-router.post('/propiedades/new-property', async (req, res) => {
+router.post('/properties/new-property', async (req, res) => {
 
 	const { 
 		title, 
