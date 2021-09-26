@@ -9,8 +9,6 @@ import Home from './components/Home'
 import Propiedades from './components/Propiedades'
 import Contacto from './components/Contacto'
 import Servicios from './components/Servicios'
-import Blog from './components/Blog'
-import Article from './components/Article'
 import Property from './components/Property'
 
 const App = () => {
@@ -54,12 +52,6 @@ const App = () => {
               succeeded= { succeeded }
               title='¿Te gusta esta propiedad? ¡Apartala ahora!'
             />
-          </Route>
-          <Route path="/blog/:slug">
-            <Article />
-          </Route>
-          <Route path="/blog">
-            <Blog />
           </Route>
           <Route path="/propiedades">
             <Propiedades properties={ properties }/>
