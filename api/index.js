@@ -5,8 +5,11 @@ const cors = require('cors')
 const path = require('path')
 const morgan = require('morgan')
 const multer = require('multer')
+const compression = require('compression')
 
 const app = express()
+
+app.use(compression())
 
 require('dotenv').config()
 console.log(process.env.NODE_ENV)
