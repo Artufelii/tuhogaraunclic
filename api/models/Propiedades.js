@@ -6,6 +6,8 @@ const Propiedades = mongoose.model('Propiedad', new Schema({
 	description: String,
 	adress: String,
 	price: String,
+	type: String,
+	status: String,
 	chars: {
 		land: String,
 		construction: String,
