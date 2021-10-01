@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import './css/Header.css'
 import Logo from '../Logos/Logo.jpeg'
 
@@ -44,7 +44,7 @@ const Header = () => {
             <li><Link to="/servicios">Servicios</Link></li>
             <li><Link to="/contacto">Contacto</Link></li>
             <div className="burger" onClick={() => showNav() }>
-              <FontAwesomeIcon icon={ faBars }/>
+              <FontAwesomeIcon icon={ !top ? faBars : faTimes }/>
             </div>
           </ul>
         </nav>
