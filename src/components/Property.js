@@ -14,20 +14,31 @@ import './css/Property.css'
 const Property = ({ handleSubmit, client, processing, succeeded, title }) => {
   const [property, setProperty] = useState({})
   const [loading, setLoading] = useState(false)
-  const [center, setCenter] = useState({})
+  const [center, setCenter] = useState({
+    lat: 0,
+    lng: 0,
+  })
   const { slug } = useParams()
 
   useEffect(() => {
+
     setLoading(true)
+
     getInfo('properties', slug)
       .then(response => {
         setProperty(response.data.propiedad)
         document.title = response.data.propiedad.title
         getLocation(response.data.propiedad.adress)
           .then(response => response.json())
-          .then(data => setCenter(data.results[0].geometry.location))
+          .then(data => {
+            setCenter({
+              lat: data.results[0].geometry.location.lat,
+              lng: data.results[0].geometry.location.lng,
+            })
+          })
       })
       .then(setLoading(false))
+
   }, [setLoading, slug, setProperty, setCenter] )
 
   return(
@@ -37,6 +48,7 @@ const Property = ({ handleSubmit, client, processing, succeeded, title }) => {
           <div className="property">
           <div className= 'property__cover' style= {{ backgroundImage: `url(${ property && property.images && property.images.cover })` }}>
                 <h1>{ property.title }</h1>
+                <h1><small>{ property.type } { property.status }</small></h1>
               </div>
             <div className="property__info">
               <div className="property__info--price">

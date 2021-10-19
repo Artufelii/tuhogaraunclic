@@ -45,6 +45,8 @@ router.post('/properties/new-property', async (req, res) => {
 		bedrooms,
 		restrooms,
 		parking,
+		type,
+		status,
 	} = req.body
 
 	const imagenes = req.files
@@ -63,6 +65,8 @@ router.post('/properties/new-property', async (req, res) => {
 		description,
 		adress,
 		price,
+		type,
+		status,
 		chars: {
 			land,
 			construction,
