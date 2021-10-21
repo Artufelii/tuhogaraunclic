@@ -1,5 +1,5 @@
 import React from "react"
-import Logo from '../Logos/Logo_png.png'
+import Logo from '../Logos/Logo_png.webp'
 import './css/LoadingScreen.css'
 
 const LoadingScreen = () => {

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import './css/Header.css'
-import Logo from '../Logos/Logo.jpeg'
+import Logo from '../Logos/Logo.webp'
 
 const Header = () => {
 

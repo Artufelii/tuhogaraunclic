@@ -8,7 +8,7 @@ import PropertyGrid from './PropertyGrid'
 import ContactForm from './ContactForm'
 import ServiceGrid from './ServiceGrid'
 import SocialGrid from './SocialGrid'
-import Logo from '../Logos/Logo_png.png'
+import Logo from '../Logos/Logo_png.webp'
 import './css/Home.css'
 
 const Home = ({ handleSubmit, client, processing, succeeded, properties }) => {

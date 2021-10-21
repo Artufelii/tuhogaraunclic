@@ -4,7 +4,7 @@ import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { Link } from 'react-router-dom'
 import './css/Contacto.css'
-import Logo from '../Logos/Logo_png.png'
+import Logo from '../Logos/Logo_png.webp'
 
 import ContactForm from './ContactForm'
 
