@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Suspense, lazy } from 'react'
 import { Switch, Route } from 'react-router-dom'
 
 import './App.css';
 import { getInfo, sendInfo } from './helpers'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Home from './components/Home'
-import Propiedades from './components/Propiedades'
-import Contacto from './components/Contacto'
-import Servicios from './components/Servicios'
-import Property from './components/Property'
+import LoadingScreen from './components/LoadingScreen';
+
+const Home = lazy(() => import('./components/Home'))
+const Propiedades = lazy(() => import ('./components/Propiedades')) 
+const Property = lazy(() => import ('./components/Property')) 
+const Servicios = lazy(() => import ('./components/Servicios')) 
+const Contacto = lazy(() => import ('./components/Contacto')) 
 
 const App = () => {
   const [succeeded, setSucceeded] = useState(false)
@@ -45,36 +47,46 @@ const App = () => {
         <Header />
         <Switch>
           <Route path="/propiedades/:slug">
-            <Property 
-              handleSubmit={ handleSubmit }
-              client= { client }
-              processing= { processing }
-              succeeded= { succeeded }
-              title='¿Te gusta esta propiedad? ¡Apartala ahora!'
-            />
+            <Suspense fallback={<LoadingScreen/>}>
+              <Property 
+                handleSubmit={ handleSubmit }
+                client= { client }
+                processing= { processing }
+                succeeded= { succeeded }
+                title='¿Te gusta esta propiedad? ¡Apartala ahora!'
+              />
+            </Suspense>
           </Route>
           <Route path="/propiedades">
-            <Propiedades properties={ properties }/>
+            <Suspense fallback={<LoadingScreen/>}>
+              <Propiedades properties={ properties }/>
+            </Suspense>
           </Route>
           <Route path="/servicios">
-            <Servicios />
+            <Suspense fallback={<LoadingScreen/>}>
+              <Servicios />
+            </Suspense>
           </Route>
           <Route path="/contacto">
-            <Contacto 
-              handleSubmit={ handleSubmit }
-              client= { client }
-              processing= { processing }
-              succeeded= { succeeded }
-            />
+            <Suspense fallback={<LoadingScreen/>}>
+              <Contacto 
+                handleSubmit={ handleSubmit }
+                client= { client }
+                processing= { processing }
+                succeeded= { succeeded }
+              />
+            </Suspense>
           </Route>
           <Route exact path="/">
-            <Home
-              handleSubmit={ handleSubmit }
-              client= { client }
-              processing= { processing }
-              succeeded= { succeeded }
-              properties={ properties }
-            />
+            <Suspense fallback={<LoadingScreen/>}>
+              <Home
+                handleSubmit={ handleSubmit }
+                client= { client }
+                processing= { processing }
+                succeeded= { succeeded }
+                properties={ properties }
+              />
+            </Suspense>
           </Route>
         </Switch>
         <Footer />

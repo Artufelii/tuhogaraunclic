@@ -1,5 +1,5 @@
-import React, { useEffect } from "react"
-import ReactPlayer from 'react-player'
+import React, { useEffect, Suspense, lazy } from "react"
+//import ReactPlayer from 'react-player'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faHome, faBullhorn, faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons'
@@ -8,9 +8,11 @@ import PropertyGrid from './PropertyGrid'
 import ContactForm from './ContactForm'
 import ServiceGrid from './ServiceGrid'
 import SocialGrid from './SocialGrid'
+import LoadingScreen from './LoadingScreen'
 import Logo from '../Logos/Logo_png.webp'
 import './css/Home.css'
 
+const ReactPlayer = lazy(() => import('react-player'))
 const Home = ({ handleSubmit, client, processing, succeeded, properties }) => {
 
   useEffect(() => {
@@ -47,13 +49,15 @@ const Home = ({ handleSubmit, client, processing, succeeded, properties }) => {
         </div>
       </div>
       <div className="home__media">
-        <ReactPlayer 
-          className="home__media--video"
-          url='https://www.facebook.com/TuHogarUnClic/videos/1132969247159307'
-          playing= { true }
-          volume= {0.3}
-          controls= { true }
-        />
+        <Suspense fallback={<LoadingScreen/>}>
+          <ReactPlayer 
+            className="home__media--video"
+            url='https://www.facebook.com/TuHogarUnClic/videos/1132969247159307'
+            playing= { true }
+            volume= {0.3}
+            controls= { true }
+          />
+        </Suspense>
         <div className="home__media--social">
           <h2>¡Siguenos en nuestras Redes Sociales!</h2>
           <SocialGrid 
