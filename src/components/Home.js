@@ -1,10 +1,9 @@
 import React, { useEffect, Suspense, lazy } from "react"
-//import ReactPlayer from 'react-player'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faHome, faBullhorn, faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookSquare, faInstagram, faYoutube, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
-import PropertyGrid from './PropertyGrid'
+//import PropertyGrid from './PropertyGrid'
 import ContactForm from './ContactForm'
 import ServiceGrid from './ServiceGrid'
 import SocialGrid from './SocialGrid'
@@ -13,6 +12,8 @@ import Logo from '../Logos/Logo_png.webp'
 import './css/Home.css'
 
 const ReactPlayer = lazy(() => import('react-player'))
+const PropertyGrid = lazy(() => import('./PropertyGrid'))
+
 const Home = ({ handleSubmit, client, processing, succeeded, properties }) => {
 
   useEffect(() => {
@@ -83,7 +84,7 @@ const Home = ({ handleSubmit, client, processing, succeeded, properties }) => {
       <div className="home__properties">
         <h2>¡Conoce Nuestras ultimas propiedades!</h2>
         <div className="home__properties--property" >
-          { properties.slice(properties.length-3).map((item) => (
+          { !properties ? <LoadingScreen/> : properties.slice(properties.length-3).map((item) => (
             <div className="property" key={item._id}>
               <PropertyGrid
                 title= { item.title }
@@ -93,7 +94,8 @@ const Home = ({ handleSubmit, client, processing, succeeded, properties }) => {
                 slug= { item.slug }
               />
             </div>
-          ))}
+          ))
+          }
         </div>
       </div>
       <div className="home__contact">

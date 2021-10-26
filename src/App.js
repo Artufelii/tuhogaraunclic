@@ -37,10 +37,13 @@ const App = () => {
 
   useEffect(() => {
 
+    setProcessing(true)
+
     getInfo('properties', '')
       .then(response => setProperties(response.data.propiedades))
+      .then(setProcessing(false))
     
-  }, [setProperties])
+  }, [setProperties, setProcessing])
 
   return (
       <div className="App">
