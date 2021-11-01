@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faHome, faBullhorn, faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookSquare, faInstagram, faYoutube, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
-//import PropertyGrid from './PropertyGrid'
 import ContactForm from './ContactForm'
 import ServiceGrid from './ServiceGrid'
 import SocialGrid from './SocialGrid'
@@ -83,20 +82,22 @@ const Home = ({ handleSubmit, client, processing, succeeded, properties }) => {
       </div>
       <div className="home__properties">
         <h2>¡Conoce Nuestras ultimas propiedades!</h2>
-        <div className="home__properties--property" >
-          { !properties ? <LoadingScreen/> : properties.slice(properties.length-3).map((item) => (
-            <div className="property" key={item._id}>
-              <PropertyGrid
-                title= { item.title }
-                adress= { item.adress }
-                price= { item.price }
-                cover= { item.images.cover }
-                slug= { item.slug }
-              />
-            </div>
-          ))
-          }
-        </div>
+        <Suspense fallback={<LoadingScreen/>}>
+          <div className="home__properties--property" >
+            { properties.slice(properties.length-3).map((item) => (
+              <div className="property" key={item._id}>
+                <PropertyGrid
+                  title= { item.title }
+                  adress= { item.adress }
+                  price= { item.price }
+                  cover= { item.images.cover }
+                  slug= { item.slug }
+                />
+              </div>
+            ))
+            }
+          </div>
+        </Suspense>
       </div>
       <div className="home__contact">
         <ContactForm 
