@@ -15,10 +15,10 @@ require('dotenv').config()
 console.log(process.env.NODE_ENV)
 
 const clientes = require('./routes/clientes')
-const blogs = require('./routes/blogs');
+// const blogs = require('./routes/blogs');
 const propiedades = require('./routes/propiedades');
 const auth = require('./routes/auth')
-const dashboard = require('./routes/dashboard')
+// const dashboard = require('./routes/dashboard')
 
 //configuraciones
 const storage = multer.diskStorage({
@@ -43,10 +43,10 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 
 //Rutas
 app.use(clientes)
-app.use(blogs)
+// app.use(blogs)
 app.use(propiedades)
 app.use(auth)
-app.use(dashboard)
+// app.use(dashboard)
 
 app.listen(app.get('port'), () => {
 	console.log(`Servidor en el puerto ${app.get('port')}`)
