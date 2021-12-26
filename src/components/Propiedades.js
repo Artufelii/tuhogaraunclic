@@ -5,6 +5,7 @@ import './css/Propiedades.css'
 const Propiedades = ({ properties }) => {
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     document.title = 'Las Mejores Propiedades a un Clic'
   })
 

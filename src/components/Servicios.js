@@ -6,6 +6,7 @@ import './css/Servicios.css'
 function Servicios() {
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     document.title  = 'Nuestros Mejores Servicios a un Clic'
   })
 

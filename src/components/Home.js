@@ -17,6 +17,7 @@ const Home = ({ handleSubmit, client, processing, succeeded, properties }) => {
 
   useEffect(() => {
     document.title = 'Tu Hogar A Un Clic | Vender, Comprar o Rentar a un Clic de distancia'
+    window.scrollTo(0, 0)
   })
 
   return(

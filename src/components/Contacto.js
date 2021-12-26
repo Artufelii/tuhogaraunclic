@@ -11,6 +11,7 @@ import ContactForm from './ContactForm'
 function Contacto({ handleSubmit, client, processing, succeeded }) {
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     document.title = 'Contactanos en un Clic'
   })
 

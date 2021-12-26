@@ -27,6 +27,7 @@ const Property = ({ handleSubmit, client, processing, succeeded, title }) => {
     getInfo('properties', slug)
       .then(response => {
         setProperty(response.data.propiedad)
+        window.scrollTo(0, 0)
         document.title = response.data.propiedad.title
         getLocation(response.data.propiedad.adress)
           .then(response => response.json())
