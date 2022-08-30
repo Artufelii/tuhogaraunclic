@@ -1,17 +1,15 @@
 import React, { useEffect, useState, Suspense, lazy } from 'react'
 import { Switch, Route } from 'react-router-dom'
-
-import './App.css';
 import { getInfo, sendInfo } from './helpers'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import LoadingScreen from './components/LoadingScreen';
+import LoadingScreen from './screens/LoadingScreen'
+import AdminRouter from './routers/AdminRouter'
+import './App.css';
 
-const Home = lazy(() => import('./components/Home'))
-const Propiedades = lazy(() => import ('./components/Propiedades')) 
-const Property = lazy(() => import ('./components/Property')) 
-const Servicios = lazy(() => import ('./components/Servicios')) 
-const Contacto = lazy(() => import ('./components/Contacto')) 
+const HomeScreen = lazy(() => import('./screens/HomeScreen'))
+const PropertysScreen = lazy(() => import ('./screens/PropertysScreen')) 
+const PropertyScreen = lazy(() => import ('./screens/PropertyScreen')) 
+const ServicesScreen = lazy(() => import ('./screens/ServicesScreen')) 
+const ContactScreen = lazy(() => import ('./screens/ContactScreen')) 
 
 const App = () => {
   const [succeeded, setSucceeded] = useState(false)
@@ -20,38 +18,33 @@ const App = () => {
   const [ properties, setProperties ] = useState([])
 
   const handleSubmit = (payload) => {
-
     setProcessing(true)
-
     sendInfo(payload)
       .then(response => setClient(response.data.newClient.name))
       .then(setSucceeded(true))
       .then(setProcessing(false))
-    
     setTimeout(() => {
       setSucceeded(false)
       setClient("")
     }, 10000)
-
   }
 
   useEffect(() => {
-
     setProcessing(true)
-
     getInfo('properties', '')
       .then(response => setProperties(response.data.propiedades))
       .then(setProcessing(false))
-    
   }, [setProperties, setProcessing])
 
   return (
       <div className="App">
-        <Header />
         <Switch>
+          <Route path="/admin/*">
+            <AdminRouter />
+          </Route>
           <Route path="/propiedades/:slug">
             <Suspense fallback={<LoadingScreen/>}>
-              <Property 
+              <PropertyScreen 
                 handleSubmit={ handleSubmit }
                 client= { client }
                 processing= { processing }
@@ -62,17 +55,17 @@ const App = () => {
           </Route>
           <Route path="/propiedades">
             <Suspense fallback={<LoadingScreen/>}>
-              <Propiedades properties={ properties }/>
+              <PropertysScreen properties={ properties }/>
             </Suspense>
           </Route>
           <Route path="/servicios">
             <Suspense fallback={<LoadingScreen/>}>
-              <Servicios />
+              <ServicesScreen />
             </Suspense>
           </Route>
           <Route path="/contacto">
             <Suspense fallback={<LoadingScreen/>}>
-              <Contacto 
+              <ContactScreen 
                 handleSubmit={ handleSubmit }
                 client= { client }
                 processing= { processing }
@@ -82,7 +75,7 @@ const App = () => {
           </Route>
           <Route exact path="/">
             <Suspense fallback={<LoadingScreen/>}>
-              <Home
+              <HomeScreen
                 handleSubmit={ handleSubmit }
                 client= { client }
                 processing= { processing }
@@ -92,7 +85,6 @@ const App = () => {
             </Suspense>
           </Route>
         </Switch>
-        <Footer />
       </div>
   );
 }

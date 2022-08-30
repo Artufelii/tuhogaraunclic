@@ -1,0 +1,79 @@
+.servicios {
+  width: 100%;
+  height: auto;
+}
+
+.servicios__portada {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../Logos/purchase-3113198_1920.webp');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.servicios__portada::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6)
+}
+
+.servicios__portada--title {
+  text-align: center;
+  position: relative;
+}
+
+.servicios__contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 90%;
+  height: auto;
+  position: relative;
+  margin: -60px auto 0 auto;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  background-color: #fefefe;
+}
+
+.servicios__contenido--servicio {
+  width: 30%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+/*--------- MEDIA QUERIES ----------*/
+
+@media (max-width: 1200px) {
+
+  .servicios__contenido--servicio {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .servicios__portada {
+    height: 50vh;
+  }
+
+  .servicios__contenido {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+  }
+
+
+}

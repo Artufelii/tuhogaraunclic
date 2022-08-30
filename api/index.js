@@ -48,6 +48,10 @@ app.use(propiedades)
 app.use(auth)
 // app.use(dashboard)
 
+app.get('/propiedades',  (req, res) => {
+	res.redirect('https://tuhogaraunclic.com')
+})
+
 app.listen(app.get('port'), () => {
 	console.log(`Servidor en el puerto ${app.get('port')}`)
 })
