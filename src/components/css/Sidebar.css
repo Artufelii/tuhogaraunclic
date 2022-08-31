@@ -7,6 +7,7 @@
   background-color: #380315;
   color: #fff;
   box-sizing: border-box;
+  overflow-y: auto;
 }
 
 .logo {
@@ -29,10 +30,19 @@
 
 .user p {
   margin: 0;
+  font-size: 12px;
 }
 
 .profile {
+  width: 40px;
+  height: 40px;
   font-size: 40px;
+  border-radius: 40px;
+}
+
+.profile img {
+  max-width: 100%;
+  border-radius: 40px;
 }
 
 .options {
@@ -62,3 +72,7 @@
   border-radius: 5px;
 }
 
+a {
+ text-decoration: none;
+ color: #fff;
+}
