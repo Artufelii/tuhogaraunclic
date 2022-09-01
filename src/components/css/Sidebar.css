@@ -1,5 +1,5 @@
 .sidebar {
-  gridArea: sidebar;
+  grid-area: sidebar;
   position: fixed;
   width: 250px;
   height: 100vh;
@@ -10,6 +10,11 @@
   overflow-y: auto;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  background-color: transparent;
+}
+
 .logo {
   width: 150px;
   height: 150px;
@@ -17,7 +22,7 @@
   border: 1px solid #fff;
   border-radius: 50%;
 }
-  
+
 .user {
   display: flex;
   justify-content: space-evenly;
@@ -72,7 +77,14 @@
   border-radius: 5px;
 }
 
+.logout {
+  padding: 10px 10px;
+  border-bottom: 1px solid #fff;
+  cursor: pointer;
+}
+
 a {
  text-decoration: none;
  color: #fff;
 }
+

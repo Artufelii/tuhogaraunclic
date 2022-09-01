@@ -29,6 +29,10 @@
   color: #380315;
 }
 
+.btn-info {
+  cursor: pointer;
+}
+
 .rounded {
   width: 40px;
   height: 40px;

@@ -6,11 +6,14 @@ import { AdminContext } from '../AdminContext'
 
 const AdminRouter = () => {
   const [usuario, setUsuario] = useState({});
+  const [hiddenSidebar, setHiddenSidebar] = useState(false)
   
   return(
     <AdminContext.Provider value={{
         usuario,
-        setUsuario
+        setUsuario,
+        hiddenSidebar,
+        setHiddenSidebar
       }}
     >
       <Switch>
