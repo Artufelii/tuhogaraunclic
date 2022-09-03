@@ -1,0 +1,47 @@
+.admin_header {
+   grid-area: header;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.searcher input {
+  border: 2px solid #380315;
+  width: 250px;
+  height: 40px;
+  padding: 5px;
+  outline: none;
+}
+
+.searcher button {
+  height: 40px;
+  width: 60px;
+  background-color: #380315;
+  color: #fff;
+}
+
+.admin_profile {
+  width: 34%;
+  max-width: 250px;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 20px;
+  color: #380315;
+}
+
+.btn-info {
+  cursor: pointer;
+}
+
+.rounded {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: #380315;
+  color: #fff;
+  font-size: 20px;
+  border: 1px solid transparent; 
+  cursor: pointer;
+}
+

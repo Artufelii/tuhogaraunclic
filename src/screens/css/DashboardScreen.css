@@ -1,0 +1,39 @@
+.dashboard {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 100%;
+  width: 100%;
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card {
+  width: 25%;
+  height: auto;
+  min-width: 100px;
+  min-height: 100px;
+  max-width: 300px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.2);
+  padding: 10px;
+}
+
+.bigCard {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 88%;
+  height: auto;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.2);
+  padding: 10px;
+}

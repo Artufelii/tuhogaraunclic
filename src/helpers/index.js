@@ -1,4 +1,5 @@
 import axios from './axios'
+import jwt from 'jsonwebtoken'
 
 const apiKey = process.env.REACT_APP_API_KEY
 
@@ -26,6 +27,24 @@ export const sendInfo = async (payload) => {
   })
   return response
 } 
+
+export const logIn = async (payload) => {
+  const response = await axios({
+    method: 'POST',
+    url: '/login',
+    data: payload
+  })
+  return response
+}
+
+export const validateToken = async (token) => {
+  if (!token) {
+    return false 
+  }
+
+  const validate = jwt.verify(token, 'superSecreta-clave')
+  return validate 
+}
 
 export const getLocation = async (adress) => {
   const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?key=${apiKey}&address=${adress}`)
