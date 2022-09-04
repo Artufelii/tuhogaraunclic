@@ -32,7 +32,10 @@ const App = () => {
   useEffect(() => {
     setProcessing(true)
     getInfo('properties', '')
-      .then(response => setProperties(response.data.propiedades))
+      .then(response => {
+        console.log(response)
+        setProperties(response.data.propiedades)
+      })
       .then(setProcessing(false))
   }, [setProperties, setProcessing])
 
