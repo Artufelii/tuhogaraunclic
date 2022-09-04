@@ -32,7 +32,10 @@ app.set('port', process.env.PORT || 4000)
 app.use(express.static(path.join(__dirname, '../build')))
 
 app.use(bodyParser.json())
-app.use(cors())
+app.use(cors({
+	origin: "https://www.tuhogaraunclic.com",
+	optionsSuccessStatus: 200
+}))
 app.use(morgan('dev'))
 app.use(multer({ storage }).any())
 
@@ -47,10 +50,6 @@ app.use(clientes)
 app.use(propiedades)
 app.use(auth)
 // app.use(dashboard)
-
-app.get('/propiedades',  (req, res) => {
-	res.redirect('https://tuhogaraunclic.com')
-})
 
 app.listen(app.get('port'), () => {
 	console.log(`Servidor en el puerto ${app.get('port')}`)

@@ -19,7 +19,7 @@ const PropertysScreen = ({ properties }) => {
           </div>
         </div>
         <div className="propiedades__contenido">
-          { properties.map( property => (
+          { properties?.map( property => (
             <div className="propiedades__contenido--propiedad" key={ property._id } >
               <PropertyGrid
                 title= { property.title }

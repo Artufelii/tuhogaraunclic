@@ -33,7 +33,6 @@ const App = () => {
     setProcessing(true)
     getInfo('properties', '')
       .then(response => {
-        console.log(response)
         setProperties(response.data.propiedades)
       })
       .then(setProcessing(false))
