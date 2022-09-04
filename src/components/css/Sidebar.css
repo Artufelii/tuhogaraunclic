@@ -62,13 +62,20 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 15px;
+  border-radius: 5px;
   border-bottom: 1px solid #fff;
   cursor: pointer; 
+}
+
+.option:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .list {
   list-style: none;
   padding: 0 10px;
+  border-radius: 5px;
+  border-bottom: 1px solid #fff;
 }
 
 .list li {
@@ -77,10 +84,8 @@
   border-radius: 5px;
 }
 
-.logout {
-  padding: 10px 10px;
-  border-bottom: 1px solid #fff;
-  cursor: pointer;
+.list li:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 a {

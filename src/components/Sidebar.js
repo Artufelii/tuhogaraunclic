@@ -64,7 +64,7 @@ const Sidebar = () => {
           <li>Usuarios</li>
         </ul>
       </div>
-      <div className="logout" onClick={logout}>
+      <div className="option" onClick={logout}>
         Logout
       </div>
     </div>

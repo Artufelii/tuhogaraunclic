@@ -12,7 +12,7 @@ const AdminHeader = () => {
         onClick={() => setHiddenSidebar(!hiddenSidebar)}
         className="rounded"
       >
-        <FontAwesomeIcon icon={ hiddenSidebar ? faEllipsisH : faEllipsisV } />
+        <FontAwesomeIcon icon={ hiddenSidebar ? faEllipsisV : faEllipsisH } />
       </button>
       <div className="searcher">
         <input 
