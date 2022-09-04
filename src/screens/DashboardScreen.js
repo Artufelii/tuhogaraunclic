@@ -21,7 +21,7 @@ const DashboardScreen = () => {
         } 
         setUsuario(response)
       })
-  }, [history, setUsuario])
+  }, [])
 
   return(
     <AdminLayout>
