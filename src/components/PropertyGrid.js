@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from 'react-router-dom'
+import { concatAdress } from "../helpers"
 import './css/Propiedad.css'
 
 function PropertyGrid({ slug, title, adress, price, cover }){
@@ -15,7 +16,7 @@ function PropertyGrid({ slug, title, adress, price, cover }){
           <h2>{ title }</h2>
         </div>
         <div className="propiedad__info--direccion">
-          <p>{ adress }</p>
+          <p>{concatAdress(adress)}</p>
         </div>
         <div className="propiedad__info--precio">
           <p>$<strong>{ price }.00</strong> MXN</p>

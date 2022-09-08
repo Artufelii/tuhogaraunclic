@@ -13,32 +13,29 @@ cloudinary.config({
 })
 
 router.get('/properties', async (req, res) => {
-
 	const propiedades = await Propiedades.find()
-
 	res
 		.status(200)
 		.send({ propiedades })
-
 })
 
 router.get('/properties/:slug', async (req, res) => {
 	const { slug } = req.params
-
 	const propiedad = await Propiedades.findOne({ slug })
-
 	res
 		.status(200)
 		.send({ propiedad })
-
 })
 
 router.post('/properties/new-property', async (req, res) => {
-
 	const { 
 		title, 
 		description, 
-		adress, 
+		street,
+		colony,
+		city,
+		cp,
+		state,
 		price, 
 		land,
 		construction,
@@ -48,7 +45,6 @@ router.post('/properties/new-property', async (req, res) => {
 		type,
 		status,
 	} = req.body
-
 	const imagenes = req.files
 	const uploadImages = {}
 
@@ -63,7 +59,13 @@ router.post('/properties/new-property', async (req, res) => {
 	const newProperty = await Propiedades.create({
 		title,
 		description,
-		adress,
+		adress: {
+			street,
+			colony,
+			city,
+			cp,
+			state,
+		},
 		price,
 		type,
 		status,

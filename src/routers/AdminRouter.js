@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import LoginScreen from '../screens/LoginScreen'
 import DashboardScreen from '../screens/DashboardScreen'
 import { AdminContext } from '../AdminContext'
+import addPropertyScreen from '../screens/addPropertyScreen'
 
 const AdminRouter = () => {
   const [usuario, setUsuario] = useState({});
@@ -17,6 +18,9 @@ const AdminRouter = () => {
       }}
     >
       <Switch>
+        <Route path="/admin/propiedades/new-property">
+          <addPropertyScreen />
+        </Route>
         <Route path="/admin/login">
           <LoginScreen />
         </Route>

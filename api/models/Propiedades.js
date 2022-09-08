@@ -4,7 +4,13 @@ const Schema = mongoose.Schema
 const Propiedades = mongoose.model('Propiedad', new Schema({
 	title: String,
 	description: String,
-	adress: String,
+	adress: {
+		street: String,
+		colony: String,
+		citiy: String,
+		cp: String,
+		state: String
+	},
 	price: String,
 	type: String,
 	status: String,

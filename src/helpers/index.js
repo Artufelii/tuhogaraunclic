@@ -46,7 +46,12 @@ export const validateToken = async (token) => {
   return validate 
 }
 
+export const concatAdress = ({ street, colony, city, state, cp }) => {
+  return "".concat(street, ', ', colony, ', ', city, ', ', state, ', ', cp)
+}
+
 export const getLocation = async (adress) => {
-  const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?key=${apiKey}&address=${adress}`)
+  const adressString = concatAdress(adress)
+  const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?key=${apiKey}&address=${adressString}`)
   return response
 }

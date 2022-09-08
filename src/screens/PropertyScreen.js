@@ -3,8 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Carousel } from 'react-responsive-carousel'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBed, faBath, faExpand, faCarSide, faRulerCombined } from '@fortawesome/free-solid-svg-icons'
-
-import { getInfo, getLocation } from '../helpers'
+import { concatAdress, getInfo, getLocation } from '../helpers'
 import LoadingScreen from './LoadingScreen'
 import Layout from '../components/Layout'
 import ContactForm from '../components/ContactForm'
@@ -15,6 +14,7 @@ import './css/Property.css'
 const PropertyScreen = ({ handleSubmit, client, processing, succeeded, title }) => {
   const [property, setProperty] = useState({})
   const [loading, setLoading] = useState(false)
+  const [adress, setAdress] = useState('')
   const [center, setCenter] = useState({
     lat: 0,
     lng: 0,
@@ -22,14 +22,13 @@ const PropertyScreen = ({ handleSubmit, client, processing, succeeded, title }) 
   const { slug } = useParams()
 
   useEffect(() => {
-
     setLoading(true)
-
     getInfo('properties', slug)
       .then(response => {
         setProperty(response.data.propiedad)
         window.scrollTo(0, 0)
         document.title = response.data.propiedad.title
+        setAdress(concatAdress(response.data.propiedad.adress))
         getLocation(response.data.propiedad.adress)
           .then(response => response.json())
           .then(data => {
@@ -40,7 +39,6 @@ const PropertyScreen = ({ handleSubmit, client, processing, succeeded, title }) 
           })
       })
       .then(setLoading(false))
-
   }, [setLoading, slug, setProperty, setCenter] )
 
   return(
@@ -98,7 +96,7 @@ const PropertyScreen = ({ handleSubmit, client, processing, succeeded, title }) 
                     <h2>Descipcion:</h2>
                     <p>{ property.description }</p>
                     <h2>Dirección:</h2>
-                    <p>{ property.adress }</p>
+                    <p>{ adress }</p>
                     <div className="mapa">
                       <Map center={ center }/>
                     </div>
