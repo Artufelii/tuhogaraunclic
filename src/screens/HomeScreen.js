@@ -87,7 +87,7 @@ const HomeScreen = ({ handleSubmit, client, processing, succeeded, properties })
           <h2>¡Conoce Nuestras ultimas propiedades!</h2>
           <Suspense fallback={<LoadingScreen/>}>
             <div className="home__properties--property" >
-              { properties.slice(properties.length-3).map((item) => (
+              { properties?.slice(properties.length-3).map((item) => (
                 <div className="property" key={item._id}>
                   <PropertyGrid
                     title= { item.title }
